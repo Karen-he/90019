@@ -38,6 +38,7 @@ def searchHashtag(tags):
     # print(hash)
     # print(originalTags)
     output = json.dumps({'trigger': hash, 'original': originalTags})
+    print(output)
     if len(hash) > 0:
         return output
     else:
