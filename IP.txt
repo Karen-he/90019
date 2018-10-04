@@ -1,0 +1,4 @@
+IP Address:
+43.240.99.197
+CouchDB:
+5984
