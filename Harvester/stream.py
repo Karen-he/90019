@@ -27,7 +27,7 @@ if len(sys.argv) > 2:
     auth_id = int(sys.argv[2])
 
 # connet to couchdb
-server = Server('http://admin:admin@127.0.0.1:5984/')
+server = Server('http://admin:hekeren@127.0.0.1:5984/')
 # server = Server(SERVER_ADDR)
 try:
     db = server[DB_Name]
