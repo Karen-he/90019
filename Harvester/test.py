@@ -11,7 +11,7 @@ from findHashtag import *
 #get args from terminal
 GEOCODE = GEOCODES['melbourne']
 # select a city melbourne and sydney
-DB_Name = 'search'
+DB_Name = 'test'
 # if len(sys.argv) > 1 :
 #     if sys.argv[1] == 'sydney' or sys.argv[1] == 'melbourne' :
 #         GEOCODE = GEOCODES[sys.argv[1]]
