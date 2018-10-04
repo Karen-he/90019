@@ -13,7 +13,7 @@ nltk.download('wordnet')
 
 # get args from terminal
 GEOBOX = GEOBOXS['melbourne']
-DB_Name = 'tweets_stream_mel'
+DB_Name = 'stream'
 if len(sys.argv) > 1:
     if sys.argv[1] == 'sydney' or sys.argv[1] == 'melbourne':
         GEOBOX = GEOBOXS[sys.argv[1]]
@@ -27,8 +27,8 @@ if len(sys.argv) > 2:
     auth_id = int(sys.argv[2])
 
 # connet to couchdb
-# server = Server('http://admin:admin@127.0.0.1:5984/')
-server = Server(SERVER_ADDR)
+server = Server('http://admin:admin@127.0.0.1:5984/')
+# server = Server(SERVER_ADDR)
 try:
     db = server[DB_Name]
 except:
