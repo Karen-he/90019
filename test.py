@@ -6,7 +6,7 @@ with open('Harvester/hashtags.txt') as inputfile:
         print(i.replace('\n', ''))
 print(hashtags)
 
-tweet = 'test'
+tweet = 'metoo'
 wordlist = tweet.split(' ')
 # count = 0
 hash = []
