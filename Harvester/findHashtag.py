@@ -28,10 +28,10 @@ def searchHashtag(tags):
     hash = []
     originalTags = []
     for tag in tags:
-        originalTags.append(tag)
         hashtag = tag['text']
         hashtag = hashtag.lower()
         hashtag = re.sub('[^0-9a-zA-Z]+', '', hashtag)
+        originalTags.append(hashtag)
         print(hashtag)
         if hashtag in hashtags:
             hash.append(hashtag)
