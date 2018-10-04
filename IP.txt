@@ -4,3 +4,11 @@ CouchDB:
 5984
 
 https://github.com/Karen-he/90019.git
+
+连成本地
+ssh -i ~/.ssh/cloud.key -L5984:127.0.0.1:5984 ubuntu@43.240.99.197
+连上instance
+ssh -i ~/.ssh/cloud.key ubuntu@43.240.99.197
+
+停止py
+pkill -9 -f path/to/my_script.py

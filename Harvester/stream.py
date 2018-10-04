@@ -9,22 +9,23 @@ from config import *
 # from count_topic import *
 from Locate import *
 import nltk
+from findHashtag import *
 nltk.download('wordnet')
 
 # get args from terminal
 GEOBOX = GEOBOXS['melbourne']
 DB_Name = 'stream'
-if len(sys.argv) > 1:
-    if sys.argv[1] == 'sydney' or sys.argv[1] == 'melbourne':
-        GEOBOX = GEOBOXS[sys.argv[1]]
-        DB_Name = 'tweets_stream_' + sys.argv[1][0:3]
-    else:
-        print("wrong city name should be (sydney or melbourne)")
-        sys.exit()
+# if len(sys.argv) > 1:
+#     if sys.argv[1] == 'sydney' or sys.argv[1] == 'melbourne':
+#         GEOBOX = GEOBOXS[sys.argv[1]]
+#         DB_Name = 'tweets_stream_' + sys.argv[1][0:3]
+#     else:
+#         print("wrong city name should be (sydney or melbourne)")
+#         sys.exit()
 
 auth_id = 0
-if len(sys.argv) > 2:
-    auth_id = int(sys.argv[2])
+if len(sys.argv) > 1:
+    auth_id = int(sys.argv[1])
 
 # connet to couchdb
 server = Server('http://admin:hekeren@127.0.0.1:5984/')
@@ -67,10 +68,11 @@ class MyStreamListener(tweepy.StreamListener):
                 # topic = give_label(ntext)
                 # time_tag = time_label(ntime)
                 suburb = give_suburb(ncoordinates)
+                hashtag = hasHashtag(ntext)
                 ndoc = {'_id': nid, 'text': ntext, 'user': nuser,
                         'coordinates': ncoordinates, 'create_time': ntime,
                         'place': nplace, 'entities': nentities,
-                        'addressed': False, 'suburb': suburb, 'sentiment': sentiment}
+                        'addressed': False, 'suburb': suburb, 'sentiment': sentiment, 'hasHashtag': hashtag}
                 db.save(ndoc)
                 print(nid)
                 print('-------------------------------------')
