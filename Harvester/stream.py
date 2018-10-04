@@ -69,10 +69,11 @@ class MyStreamListener(tweepy.StreamListener):
                 # time_tag = time_label(ntime)
                 suburb = give_suburb(ncoordinates)
                 hashtag = hasHashtag(ntext)
+                triggerHashtag = searchHashtag(tags)
                 ndoc = {'_id': nid, 'text': ntext, 'user': nuser,
                         'coordinates': ncoordinates, 'create_time': ntime,
                         'place': nplace, 'entities': nentities,
-                        'addressed': False, 'suburb': suburb, 'sentiment': sentiment, 'hasHashtag': hashtag}
+                        'addressed': False, 'suburb': suburb, 'sentiment': sentiment, 'hasHashtag': hashtag, 'triggerHashtag': triggerHashtag}
                 db.save(ndoc)
                 print(nid)
                 print('-------------------------------------')
