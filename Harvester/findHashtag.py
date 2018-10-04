@@ -36,8 +36,9 @@ def searchHashtag(tags):
         if hashtag in hashtags:
             hash.append(hashtag)
     # print(hash)
-    print(originalTags)
+    # print(originalTags)
+    output = json.dumps({'trigger': hash, 'original': originalTags})
     if len(hash) > 0:
-        return hash
+        return output
     else:
-        return originalTags
+        return 'none'
