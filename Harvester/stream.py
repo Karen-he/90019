@@ -8,9 +8,9 @@ from config import *
 # from swearing_label import *
 # from count_topic import *
 from Locate import *
-import nltk
+# import nltk
 from findHashtag import *
-nltk.download('wordnet')
+# nltk.download('wordnet')
 
 # get args from terminal
 GEOBOX = GEOBOXS['melbourne']
