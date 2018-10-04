@@ -26,7 +26,9 @@ def hasHashtag(tweet):
 
 def searchHashtag(tags):
     hash = []
+    originalTags = []
     for tag in tags:
+        originalTags.append(tag)
         hashtag = tag['text']
         hashtag = hashtag.lower()
         hashtag = re.sub('[^0-9a-zA-Z]+', '', hashtag)
@@ -37,4 +39,4 @@ def searchHashtag(tags):
     if len(hash) > 0:
         return hash
     else:
-        return 'none'
+        return originalTags
