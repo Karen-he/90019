@@ -62,6 +62,7 @@ class MyStreamListener(tweepy.StreamListener):
                 ntime = tweet['created_at']
                 nplace = tweet['place']
                 nentities = tweet['entities']
+                tags = doc['entities']['hashtags']
                 sentiment = analyzer.polarity_scores(ntext)
                 # swearing = lable_swearing(ntext)
                 # generate new tweeter

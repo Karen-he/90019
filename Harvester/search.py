@@ -82,6 +82,7 @@ def start_stream():
                             ntime = doc['created_at']
                             nplace = doc['place']
                             nentities = doc['entities']
+                            tags = doc['entities']['hashtags']
                             sentiment = analyzer.polarity_scores(ntext)
                             # swearing = lable_swearing(ntext)
                             # topic = give_label(ntext)
