@@ -35,7 +35,8 @@ def searchHashtag(tags):
         print(hashtag)
         if hashtag in hashtags:
             hash.append(hashtag)
-    print(hash)
+    # print(hash)
+    print(originalTags)
     if len(hash) > 0:
         return hash
     else:
