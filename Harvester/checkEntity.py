@@ -31,9 +31,9 @@ def loopDB():
 
 def checkColunm(doc):
     # nid = doc['id_str']
-    doc = dict(doc)
+    # doc = dict(doc)
     for i in ['hasHashtag', 'triggerHashtag', 'sentiment', 'suburb']:
-        if not doc.has_keys(i) or (doc[i] == 0):
+        if i not in doc.keys() or (doc[i] == 0):
             text = doc['text']
             coordinates = doc['coordinates']
             # nuser = doc['user']
