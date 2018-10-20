@@ -25,7 +25,7 @@ def loopDB():
         print(i)
         for id in db:
             print(id)
-            doc = dict(db[id])
+            # doc = dict(db[id])
             # doc = dict(doc)
             checkColunm(doc)
             db.save(doc)
@@ -35,9 +35,9 @@ def loopDB():
 def checkColunm(doc):
     # nid = doc['id_str']
     # doc = dict(doc)
-    for i in ['hasHashtag', 'triggerHashtag', 'sentiment', 'suburb']:
+    for i in ['hasHashtag', 'triggerHashtag', 'sentiment', 'suburb', 'test']:
         if i not in doc.keys() or (doc[i] == 0):
-            print('not have this key')
+            print(doc['id']+' not have this key: '+i)
             text = doc['text']
             coordinates = doc['coordinates']
             # nuser = doc['user']
@@ -53,6 +53,7 @@ def checkColunm(doc):
             doc['triggerHashtag'] = triggerHashtag
             doc['sentiment'] = sentiment
             doc['suburb'] = suburb
+            doc['test'] = 'yeah'
             # # generate new tweeter
             # ndoc = {'_id': nid, 'text': ntext, 'user': nuser,
             #         'coordinates': ncoordinates, 'create_time': ntime,
