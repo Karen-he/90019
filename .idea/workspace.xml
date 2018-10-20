@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1549cb4b-07fa-42aa-ae38-6e409bf5eb85" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Harvester/checkEntity.py" beforeDir="false" afterPath="$PROJECT_DIR$/Harvester/checkEntity.py" afterDir="false" />
-    </list>
+    <list default="true" id="1549cb4b-07fa-42aa-ae38-6e409bf5eb85" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

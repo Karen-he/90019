@@ -25,7 +25,7 @@ def loopDB():
         print(i)
         for id in db:
             print(id)
-            # doc = dict(db[id])
+            doc = dict(db[id])
             # doc = dict(doc)
             checkColunm(doc)
             db.save(doc)
