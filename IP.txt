@@ -15,6 +15,8 @@ ssh -i ~/.ssh/cloud.key ubuntu@43.240.99.197
 
 停止py
 pkill -9 -f path/to/my_script.py
+pkill -9 -f search.py
+pkill -9 -f stream.py
 
 localhost:5984/_utils
 43.240.99.197:5984/_utils
@@ -26,6 +28,7 @@ run in the background:
 nohup python3 stream.py 1  > streamLog1.txt 2>&1 &
 nohup python3 stream.py > streamLog0.txt 2>&1 &
 nohup python3 search.py > searchLog.txt 2>&1 &
+nohup python3 checkEntity.py > checkEntity.txt 2>&1 &
 jobs
 
 run session in the backgroud
