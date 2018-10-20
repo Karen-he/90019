@@ -33,7 +33,7 @@ def checkColunm(doc):
     # nid = doc['id_str']
     doc = dict(doc)
     for i in ['hasHashtag', 'triggerHashtag', 'sentiment', 'suburb']:
-        if len(doc[i]) == 0:
+        if not doc.has_keys(i) or (doc[i] == 0):
             text = doc['text']
             coordinates = doc['coordinates']
             # nuser = doc['user']
