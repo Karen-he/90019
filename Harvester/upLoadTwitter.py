@@ -26,21 +26,25 @@ for row in rows:
     if id in db:
         print('--------already saved----------------')
     else:
-        print(doc['_id'])
-        ndoc = doc
-        text = doc['text']
-        coordinates = doc['coordinates']
-        sentiment = analyzer.polarity_scores(text)
-        suburb = give_suburb(coordinates)
-        hashtag = hasHashtag(text)
-        tags = doc['entities']['hashtags']
-        triggerHashtag = searchHashtag(tags)
-        ndoc['hasHashtag'] = hashtag
-        ndoc['triggerHashtag'] = triggerHashtag
-        ndoc['sentiment'] = sentiment
-        ndoc['suburb'] = suburb
-        db.save(ndoc)
-        print('********************************************')
+        try:
+            print(doc['_id'])
+            ndoc = doc
+            text = doc['text']
+            coordinates = doc['coordinates']
+            sentiment = analyzer.polarity_scores(text)
+            suburb = give_suburb(coordinates)
+            hashtag = hasHashtag(text)
+            tags = doc['entities']['hashtags']
+            triggerHashtag = searchHashtag(tags)
+            ndoc['hasHashtag'] = hashtag
+            ndoc['triggerHashtag'] = triggerHashtag
+            ndoc['sentiment'] = sentiment
+            ndoc['suburb'] = suburb
+            db.save(ndoc)
+            print('********************************************')
+        except Exception as e:
+                print(e)
+                continue
 
 
 
