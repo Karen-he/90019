@@ -59,3 +59,4 @@ def checkColunm(doc):
             print(doc['id'])
             print('********************************************')
             break
+loopDB()
