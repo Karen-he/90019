@@ -32,7 +32,7 @@ def searchHashtag(tags):
         hashtag = hashtag.lower()
         hashtag = re.sub('[^0-9a-zA-Z]+', '', hashtag)
         originalTags.append(hashtag)
-        print(hashtag)
+        # print(hashtag)
         if hashtag in hashtags:
             hash.append(hashtag)
     # print(hash)
