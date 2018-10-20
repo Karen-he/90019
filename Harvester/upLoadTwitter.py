@@ -13,7 +13,7 @@ db = server['twitter']
 analyzer = SentimentIntensityAnalyzer()
 
 with open('/mnt/tmp/twitter.json') as twitterFile:
-    twitterJson = json.loads(twitterFile)
+    twitterJson = json.loads(json.dumps(twitterFile))
     rows = twitterJson['rows']
     for row in rows:
         doc = dict(row['doc'])
