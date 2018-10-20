@@ -37,7 +37,7 @@ def checkColunm(doc):
     # doc = dict(doc)
     for i in ['hasHashtag', 'triggerHashtag', 'sentiment', 'suburb', 'test']:
         if i not in doc.keys() or (doc[i] == 0):
-            print(doc['id']+' not have this key: '+i)
+            print(doc['_id']+' not have this key: '+i)
             text = doc['text']
             coordinates = doc['coordinates']
             # nuser = doc['user']
