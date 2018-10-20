@@ -5,13 +5,12 @@ from couchdb import Server
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from config import *
 from Locate import *
-import sys
+# import sys
 from findHashtag import *
 
 
-# DB_Name = ['stream', 'search']
-DB_Name = ['test']
-# db_id = sys.argv[1]
+DB_Name = ['stream', 'search']
+# DB_Name = ['test']
 
 # connet to couchdb
 server = Server('http://admin:hekeren@127.0.0.1:5984/')
@@ -26,24 +25,17 @@ def loopDB():
         for id in db:
             print(id)
             doc = dict(db[id])
-            # doc = dict(doc)
             checkColunm(doc)
             db.save(doc)
             print('********************************************')
 
 
 def checkColunm(doc):
-    # nid = doc['id_str']
-    # doc = dict(doc)
-    for i in ['hasHashtag', 'triggerHashtag', 'sentiment', 'suburb', 'test']:
+    for i in ['hasHashtag', 'triggerHashtag', 'sentiment', 'suburb']:
         if i not in doc.keys() or (doc[i] == 0):
             print(doc['_id']+' not have this key: '+i)
             text = doc['text']
             coordinates = doc['coordinates']
-            # nuser = doc['user']
-            # ntime = doc['created_at']
-            # nplace = doc['place']
-            # nentities = doc['entities']
             sentiment = analyzer.polarity_scores(text)
             suburb = give_suburb(coordinates)
             hashtag = hasHashtag(text)
@@ -53,15 +45,5 @@ def checkColunm(doc):
             doc['triggerHashtag'] = triggerHashtag
             doc['sentiment'] = sentiment
             doc['suburb'] = suburb
-            doc['test'] = 'yeah'
-            # # generate new tweeter
-            # ndoc = {'_id': nid, 'text': ntext, 'user': nuser,
-            #         'coordinates': ncoordinates, 'create_time': ntime,
-            #         'place': nplace, 'entities': nentities,
-            #         'addressed': False, 'sentiment': sentiment, 'suburb': suburb, 'hasHashtag': hashtag,
-            #         'triggerHashtag': triggerHashtag}
-
-            # db.save(doc)
-            # print(doc['id'])
             break
 loopDB()
