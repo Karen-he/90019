@@ -12,8 +12,8 @@ db = server['twitter']
 # instance of do sentiment analysis
 analyzer = SentimentIntensityAnalyzer()
 
-with open('/mnt/tmp/twitter.json') as twitterFile:
-    twitterJson = json.loads(json.dumps(twitterFile))
+with open('/mnt/ttwitter.json') as twitterFile:
+    twitterJson = json.load(twitterFile)
     rows = twitterJson['rows']
     for row in rows:
         doc = dict(row['doc'])
