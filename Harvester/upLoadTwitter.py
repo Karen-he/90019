@@ -7,7 +7,7 @@ import json
 
 DB_Name = ['twitter']
 server = Server('http://admin:hekeren@127.0.0.1:5984/')
-db = server[DB_Name]
+db = server['twitter']
 
 # instance of do sentiment analysis
 analyzer = SentimentIntensityAnalyzer()
