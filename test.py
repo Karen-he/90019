@@ -1,14 +1,35 @@
+# import tweepy
+from couchdb import Server
 import json
+# import time
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+# from config import *
+# from Locate import *
+import sys
+# from findHashtag import *
 
-l = ['a', 'b']
-h = ['1', '2']
-o = json.dumps({'l': l, 'h': h})
-print(o)
 
-hs = {'a': 1, 'b':2}
-print(hs['a'].bit_length())
+# DB_Name = ['stream', 'search']
+DB_Name = ['test']
+# db_id = sys.argv[1]
 
-doc = json.loads(o)
-for i in ['h', 'l']:
-    if len(doc[i]) > 0:
-        print(len(doc[i]))
+# connet to couchdb
+server = Server('http://admin:hekeren@127.0.0.1:5984/')
+
+# instance of do sentiment analysis
+analyzer = SentimentIntensityAnalyzer()
+
+def loopDB():
+    for i in DB_Name:
+        db = server[i]
+        for id in db:
+            print(id)
+            # print(db[doc])
+            doc = dict(db[id])
+            # json.load()
+            print(doc)
+
+            # checkColunm(doc)
+            # db.save(doc)
+
+loopDB()

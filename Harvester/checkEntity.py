@@ -22,8 +22,9 @@ analyzer = SentimentIntensityAnalyzer()
 def loopDB():
     for i in DB_Name:
         db = server[i]
-        for doc in db:
-            doc = dict(doc)
+        for id in db:
+            doc = dict(db[id])
+            # doc = dict(doc)
             checkColunm(doc)
             db.save(doc)
 
