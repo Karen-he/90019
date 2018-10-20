@@ -13,7 +13,7 @@ for i in range(len(melb_surburbs)):
     melb_sub_Dict[melb_surburbs[i]['properties']['lga_name']] = subBoundary
 
 print("Total", len(melb_sub_Dict))
-print("Dictionary: ", melb_sub_Dict)
+# print("Dictionary: ", melb_sub_Dict)
 
 # give label of suburb
 def give_suburb(coordinates):

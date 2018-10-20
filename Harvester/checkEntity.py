@@ -22,11 +22,14 @@ analyzer = SentimentIntensityAnalyzer()
 def loopDB():
     for i in DB_Name:
         db = server[i]
+        print(i)
         for id in db:
+            print(id)
             doc = dict(db[id])
             # doc = dict(doc)
             checkColunm(doc)
             db.save(doc)
+            print('********************************************')
 
 
 def checkColunm(doc):
@@ -34,6 +37,7 @@ def checkColunm(doc):
     # doc = dict(doc)
     for i in ['hasHashtag', 'triggerHashtag', 'sentiment', 'suburb']:
         if i not in doc.keys() or (doc[i] == 0):
+            print('not have this key')
             text = doc['text']
             coordinates = doc['coordinates']
             # nuser = doc['user']
@@ -57,7 +61,6 @@ def checkColunm(doc):
             #         'triggerHashtag': triggerHashtag}
 
             # db.save(doc)
-            print(doc['id'])
-            print('********************************************')
+            # print(doc['id'])
             break
 loopDB()
