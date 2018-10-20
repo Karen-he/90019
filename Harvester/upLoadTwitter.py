@@ -6,9 +6,9 @@ from findHashtag import *
 import json
 import ijson
 
-DB_Name = ['twitter']
+# DB_Name = ['twitter']
 server = Server('http://admin:hekeren@127.0.0.1:5984/')
-db = server['twitter']
+db = server['search']
 
 # instance of do sentiment analysis
 analyzer = SentimentIntensityAnalyzer()
@@ -22,21 +22,25 @@ rows = ijson.items(twitterFile, 'rows.item')
 #     rows = twitterJson['rows']
 for row in rows:
     doc = dict(row['doc'])
-    print(doc['_id'])
-    ndoc = doc
-    text = doc['text']
-    coordinates = doc['coordinates']
-    sentiment = analyzer.polarity_scores(text)
-    suburb = give_suburb(coordinates)
-    hashtag = hasHashtag(text)
-    tags = doc['entities']['hashtags']
-    triggerHashtag = searchHashtag(tags)
-    ndoc['hasHashtag'] = hashtag
-    ndoc['triggerHashtag'] = triggerHashtag
-    ndoc['sentiment'] = sentiment
-    ndoc['suburb'] = suburb
-    db.save(ndoc)
-    print('********************************************')
+    id = doc['_id']
+    if id in db:
+        print('--------already saved----------------')
+    else:
+        print(doc['_id'])
+        ndoc = doc
+        text = doc['text']
+        coordinates = doc['coordinates']
+        sentiment = analyzer.polarity_scores(text)
+        suburb = give_suburb(coordinates)
+        hashtag = hasHashtag(text)
+        tags = doc['entities']['hashtags']
+        triggerHashtag = searchHashtag(tags)
+        ndoc['hasHashtag'] = hashtag
+        ndoc['triggerHashtag'] = triggerHashtag
+        ndoc['sentiment'] = sentiment
+        ndoc['suburb'] = suburb
+        db.save(ndoc)
+        print('********************************************')
 
 
 
