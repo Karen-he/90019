@@ -5,6 +5,7 @@ search = server['search']
 stream = server['stream']
 hashtag = server['hashtag']
 
+print('search')
 for id in search:
     doc = dict(search[id])
     id = doc['_id']
@@ -22,7 +23,7 @@ for id in search:
         except Exception as e:
                 print(e)
                 continue
-
+print('stream')
 for id in stream:
     doc = dict(search[id])
     id = doc['_id']
