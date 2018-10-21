@@ -39,6 +39,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 #connet to couchdb server
 server = Server('http://admin:hekeren@127.0.0.1:5984/')
+hashtagdb = server['hashtag']
 # server = Server(SERVER_ADDR)
 try:
     db = server[DB_Name]
@@ -96,6 +97,9 @@ def start_stream():
                                     'place': nplace, 'entities': nentities,
                                     'addressed': False, 'sentiment': sentiment, 'suburb': suburb, 'hasHashtag': hashtag, 'triggerHashtag': triggerHashtag}
                             db.save(ndoc)
+                            if hashtag != 'none' or triggerHashtag != 'none':
+                                ndoc.pop('_rev')
+                                hashtagdb.save(ndoc)
                             print(nid)
                             print('********************************************')
                     except tweepy.TweepError:

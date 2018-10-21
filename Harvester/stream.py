@@ -29,6 +29,7 @@ if len(sys.argv) > 1:
 
 # connet to couchdb
 server = Server('http://admin:hekeren@127.0.0.1:5984/')
+hashtagdb = server['hashtag']
 # server = Server(SERVER_ADDR)
 try:
     db = server[DB_Name]
@@ -76,6 +77,9 @@ class MyStreamListener(tweepy.StreamListener):
                         'place': nplace, 'entities': nentities,
                         'addressed': False, 'suburb': suburb, 'sentiment': sentiment, 'hasHashtag': hashtag, 'triggerHashtag': triggerHashtag}
                 db.save(ndoc)
+                if hashtag != 'none' or triggerHashtag != 'none':
+                    ndoc.pop('_rev')
+                    hashtagdb.save(ndoc)
                 print(nid)
                 print('-------------------------------------')
                 return True

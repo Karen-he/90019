@@ -10,16 +10,28 @@ neutral sentiment: (compound score > -0.05) and (compound score < 0.05)
 negative sentiment: compound score <= -0.05
 
 
-http://localhost:5984/test/_design/test/_view/test
-
+positive:
+http://localhost:5984/hashtag/_design/sentiment/_view/positive
 {"rows":[
-{"key":null,"value":4570}
+{"key":null,"value":625}
 ]}
 
-http://localhost:5984/search/_design/%23notNone/_view/[all]%20hashtag%20not%20none
+negative:
+http://localhost:5984/hashtag/_design/sentiment/_view/neg
 {"rows":[
-{"key":null,"value":1729}
+{"key":null,"value":3678}
 ]}
+
+neutrual:
+http://localhost:5984/hashtag/_design/sentiment/_view/neu
+{"rows":[
+{"key":null,"value":469}
+]}
+
+hashtag2018:
+{"db_name":"hashtag","update_seq":"4779-g1AAAAFreJzLYWBg4MhgTmEQTM4vTc5ISXIwNDLXMwBCwxygFFMiQ5L8____s5KA7HA86pIUgGSSPUxpKz6lDiCl8TClcfiUJoCU1sOUOuNRmscCJBkagBRQ9Xyw8jCCyhdAlO8nUvkBiPL7YOXWBJU_gCiHuN09CwAmz2FR","sizes":{"file":21448274,"external":24271011,"active":11118271},"purge_seq":0,"other":{"data_size":24271011},"doc_del_count":0,"doc_count":4773,"disk_size":21448274,"disk_format_version":6,"data_size":11118271,"compact_running":false,"cluster":{"q":8,"n":1,"w":1,"r":1},"instance_start_time":"0"}
+doc_count":4773
+
 
 {
   "_id": "1047834476535934979",
