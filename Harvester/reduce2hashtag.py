@@ -10,7 +10,7 @@ for id in search:
     print('search')
     doc = dict(search[id])
     id = doc['_id']
-    if id in hashtag:
+    if id in hashtagdb:
         print('--------already saved----------------')
     else:
         try:
@@ -29,7 +29,7 @@ for id in stream:
     print('stream')
     doc = dict(search[id])
     id = doc['_id']
-    if id in hashtag:
+    if id in hashtagdb:
         print('--------already saved----------------')
     else:
         try:
