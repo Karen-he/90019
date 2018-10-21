@@ -16,19 +16,19 @@ for id in search:
         print('--------already saved----------------')
     else:
         try:
-            print(doc['_id'])
+            # print(doc['_id'])
             hashtag = doc['hasHashtag']
             triggerHashtag = doc['triggerHashtag']
             if hashtag != 'none' or triggerHashtag != 'none':
                 nodc = doc
                 # hashtagdb.save(nodc)
-                hashtagdb[i]=nodc
+                hashtagdb['i']=nodc
                 i=i+1
                 print(i)
                 print('********************************************')
         except Exception as e:
                 print(e)
-                continue
+                # continue
 print('stream')
 for id in stream:
     # print('stream')
@@ -38,16 +38,16 @@ for id in stream:
         print('--------already saved----------------')
     else:
         try:
-            print(doc['_id'])
+            # print(doc['_id'])
             hashtag = doc['hasHashtag']
             triggerHashtag = doc['triggerHashtag']
             if hashtag != 'none' or triggerHashtag != 'none':
                 nodc = doc
                 # hashtagdb.save(nodc)
-                hashtagdb[i] = nodc
+                hashtagdb['i'] = nodc
                 i = i + 1
                 print(i)
                 print('********************************************')
         except Exception as e:
                 print(e)
-                continue
+                # continue
