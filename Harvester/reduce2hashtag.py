@@ -7,7 +7,7 @@ hashtagdb = server['hashtag']
 
 # print('search')
 for id in search:
-    print('search')
+    # print('search')
     doc = dict(search[id])
     id = doc['_id']
     if id in hashtagdb:
@@ -26,7 +26,7 @@ for id in search:
                 continue
 # print('stream')
 for id in stream:
-    print('stream')
+    # print('stream')
     doc = dict(search[id])
     id = doc['_id']
     if id in hashtagdb:
