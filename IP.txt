@@ -17,6 +17,7 @@ ssh -i ~/.ssh/cloud.key ubuntu@43.240.99.197
 pkill -9 -f path/to/my_script.py
 pkill -9 -f search.py
 pkill -9 -f stream.py
+pkill -9 -f checkEntity.py
 
 localhost:5984/_utils
 43.240.99.197:5984/_utils
