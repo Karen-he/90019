@@ -1,5 +1,5 @@
 from couchdb import Server
-import json
+# import json
 
 server = Server('http://admin:hekeren@127.0.0.1:5984/')
 search = server['search']
@@ -22,8 +22,9 @@ for id in search:
             if hashtag != 'none' or triggerHashtag != 'none':
                 nodc = doc
                 # hashtagdb.save(nodc)
-                hashtagdb['i']=nodc
+                hashtagdb[id]=nodc
                 i=i+1
+                print(doc['_id'])
                 print(i)
                 print('********************************************')
         except Exception as e:
@@ -44,10 +45,11 @@ for id in stream:
             if hashtag != 'none' or triggerHashtag != 'none':
                 nodc = doc
                 # hashtagdb.save(nodc)
-                hashtagdb['i'] = nodc
+                hashtagdb[id] = nodc
                 i = i + 1
+                print(doc['_id'])
                 print(i)
                 print('********************************************')
         except Exception as e:
                 print(e)
-                # continue
+                continue
