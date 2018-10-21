@@ -15,7 +15,7 @@ hashtagdb = server['hashtag2017']
 # instance of do sentiment analysis
 analyzer = SentimentIntensityAnalyzer()
 
-twitterFile = open('/tmp/twitter.json')
+twitterFile = open('/mnt/tmp/twitter.json')
 
 rows = ijson.items(twitterFile, 'rows.item')
 
