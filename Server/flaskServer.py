@@ -1,10 +1,6 @@
-import CouchDB as CouchDB
 from flask import Flask, render_template
-# import Flask-CouchDB
-from flask_couchdb import CouchDB
+
 app = Flask(__name__)
-
-
 
 @app.route("/")
 @app.route("/home")
