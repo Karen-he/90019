@@ -9,7 +9,28 @@ positive sentiment: compound score >= 0.05
 neutral sentiment: (compound score > -0.05) and (compound score < 0.05)
 negative sentiment: compound score <= -0.05
 
+hashtag2017:
+http://localhost:5984/hashtag2017/_design/sentiment/_view/neu
+{"rows":[
+{"key":null,"value":376}
+]}
+http://localhost:5984/hashtag2017/_design/sentiment/_view/neg
+{"rows":[
+{"key":null,"value":244}
+]}
+http://localhost:5984/hashtag2017/_design/sentiment/_view/pos
+{"rows":[
+{"key":null,"value":76}
+]}
+http://localhost:5984/hashtag2017/_design/sentiment%26time/_view/pos
+include docs
 
+hashtag2018
+count:
+http://localhost:5984/hashtag/_design/count/_view/neu
+http://localhost:5984/hashtag/_design/count/_view/pos
+http://localhost:5984/hashtag/_design/count/_view/neg
+include id:
 positive:
 http://localhost:5984/hashtag/_design/sentiment/_view/positive
 {"rows":[

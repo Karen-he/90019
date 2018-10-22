@@ -7,10 +7,17 @@ app = Flask(__name__)
 def home():
     return "<h1>Change</h1>"
 
-
-@app.route("/about")
+@app.route("/summary")
 def about():
-    return "<h1>About Page</h1>"
+    return "<h1>summary</h1>"
+
+@app.route("/timeline")
+def about():
+    return "<h1>timeline</h1>"
+
+@app.route("/info")
+def about():
+    return "<h1>info</h1>"
 
 #coonect to views
 

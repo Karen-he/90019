@@ -65,10 +65,6 @@ class MyStreamListener(tweepy.StreamListener):
                 nentities = tweet['entities']
                 tags = tweet['entities']['hashtags']
                 sentiment = analyzer.polarity_scores(ntext)
-                # swearing = lable_swearing(ntext)
-                # generate new tweeter
-                # topic = give_label(ntext)
-                # time_tag = time_label(ntime)
                 suburb = give_suburb(ncoordinates)
                 hashtag = hasHashtag(ntext)
                 triggerHashtag = searchHashtag(tags)
@@ -128,3 +124,4 @@ def start_stream():
             continue
 
 start_stream()
+
