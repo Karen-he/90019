@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="align-middle text-md-center">Summary</h1>
+<div>
+    <canvas id="pieChart" height="100" width="200"></canvas>
+    <canvas id="barChart" height="100" width="200"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+
+    <script>
+        // var sum = JSON.parse({{summary}});
+        var sum = JSON.parse('{{ summary | tojson | safe}}');
+        var pos = sum['pos'];
+        var neg = sum['neg'];
+        var neu = sum['neu'];
+        console.log(neg+pos+neu+' html');
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='summary.js') }}"></script>
+</div>
+{% endblock %}

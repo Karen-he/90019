@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+        <div class="col-md-4 sidenav">
+            <p></p>
+            <p>Total Posts(since 2017.10): {{total}}</p>
+        <p>Total Posts with Women Topic: {{summary.total}}</p>
+            <!--<p>Women Topic - Sentiment Analysis:</p>-->
+        <p>Negative Posts: {{summary.neg}}</p>
+        <p>Positive Posts: {{summary.pos}}</p>
+        <p>Neutrual Posts: {{summary.neu}}</p>
+    </div>
+        <div class="col-md-8 text-left">
+          <h1>Welcome</h1>
+          <p></p>
+          <hr>
+          <h3>COMP-90019: Socail Media Data Analysis - Women Topic</h3>
+            <p></p>
+          <p>Location: Melbourne</p>
+            <p>Keren He</p>
+            <p>865255</p>
+            <p>kerenh1@student.unimelb.edu.au</p>
+        </div>
+        </div>
+    </div>
+{% endblock content %}

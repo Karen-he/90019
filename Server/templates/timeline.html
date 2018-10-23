@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="align-middle text-md-center">Timeline</h1>
+<div>
+    <canvas id="lineChart"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+    <script>
+        // var sum = JSON.parse({{summary}});
+        var timeline = JSON.parse('{{ timeline | tojson | safe}}');
+        // console.log(timeline.neg.values());
+        var neg = Object.values(timeline['neg']);
+        var pos = Object.values(timeline['pos']);
+        var neu = Object.values(timeline['neu']);
+        console.log(neg+neu+pos+"html");
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='timeline.js') }}"></script>
+</div>
+{% endblock %}
