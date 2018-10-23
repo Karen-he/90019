@@ -34,8 +34,14 @@
       <file leaf-file-name="flaskServer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server/flaskServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="38" selection-start-column="38" selection-end-column="38" />
+            <state relative-caret-position="247">
+              <caret line="186" column="55" selection-start-line="186" selection-start-column="55" selection-end-line="186" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#1864#4637#0" />
+                <element signature="e#4731#5267#0" />
+                <element signature="e#5760#6175#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -758,8 +764,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/flaskServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
+        <state relative-caret-position="247">
+          <caret line="186" column="55" selection-start-line="186" selection-start-column="55" selection-end-line="186" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#1864#4637#0" />
+            <element signature="e#4731#5267#0" />
+            <element signature="e#5760#6175#0" />
+          </folding>
         </state>
       </provider>
     </entry>
