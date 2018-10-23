@@ -1,0 +1,19 @@
+{
+  "name": "Tweets-Women",
+  "version": "1.0",
+  "description": "Socail Media Data Analysis - Women Topic",
+  "permissions": ["storage", "notifications"],
+  "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "icons": {
+      "16": "women.jpg"
+    },
+   "browser_action": {
+   	"default_icon": "women.jpg",
+   	"default_title": "Tweets-Women",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}

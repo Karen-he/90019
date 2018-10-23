@@ -2,7 +2,7 @@ import time
 from datetime import datetime
 import threading
 from couchdb import Server
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 import requests
 
 # print('before create app')
@@ -154,6 +154,21 @@ def summary():
     summary['neg'] = neg
     summary['neu'] = neu
     return render_template('summary.html', title='summary', summary=summary)
+
+@app.route('/view', methods=['GET'])
+def get_tasks():
+    summary = {}
+    total = len(hashtagdb) + len(hashtag17db)
+    pos = pos17.total_rows + pos18.total_rows
+    neg = neg17.total_rows + neg18.total_rows
+    neu = neu17.total_rows + neu18.total_rows
+    # summary['total'] = total
+    summary['pos'] = pos
+    summary['neg'] = neg
+    summary['neu'] = neu
+    response = jsonify(summary)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 @app.route("/timeline")
