@@ -8,17 +8,8 @@ from config import *
 from Locate import *
 from findHashtag import *
 
-#get args from terminal
 GEOCODE = GEOCODES['melbourne']
-# select a city melbourne and sydney
 DB_Name = 'search'
-# if len(sys.argv) > 1 :
-#     if sys.argv[1] == 'sydney' or sys.argv[1] == 'melbourne' :
-#         GEOCODE = GEOCODES[sys.argv[1]]
-#         DB_Name = 'tweets_search_' + sys.argv[1][0:3]
-#     else:
-#         print("wrong city name should be (sydney or melbourne)")
-#         sys.exit()
 
 auth_id = 2
 if len(sys.argv) > 1:
@@ -55,14 +46,6 @@ print('database: ' + DB_Name)
 analyzer = SentimentIntensityAnalyzer()
 
 
-# # add time tag
-# def time_label(tweet_time):
-#     time_parse = tweet_time.split(' ')[3]
-#     time_tag = time_parse[:2]
-#     return time_tag
-
-
-
 def start_stream():
     while True:
         try:
@@ -85,9 +68,6 @@ def start_stream():
                             nentities = doc['entities']
                             tags = doc['entities']['hashtags']
                             sentiment = analyzer.polarity_scores(ntext)
-                            # swearing = lable_swearing(ntext)
-                            # topic = give_label(ntext)
-                            # time_tag = time_label(ntime)
                             suburb = give_suburb(ncoordinates)
                             hashtag = hasHashtag(ntext)
                             triggerHashtag = searchHashtag(tags)

@@ -5,23 +5,11 @@ import time
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import sys
 from config import *
-# from swearing_label import *
-# from count_topic import *
 from Locate import *
-# import nltk
 from findHashtag import *
-# nltk.download('wordnet')
 
-# get args from terminal
 GEOBOX = GEOBOXS['melbourne']
 DB_Name = 'stream'
-# if len(sys.argv) > 1:
-#     if sys.argv[1] == 'sydney' or sys.argv[1] == 'melbourne':
-#         GEOBOX = GEOBOXS[sys.argv[1]]
-#         DB_Name = 'tweets_stream_' + sys.argv[1][0:3]
-#     else:
-#         print("wrong city name should be (sydney or melbourne)")
-#         sys.exit()
 
 auth_id = 0
 if len(sys.argv) > 1:
@@ -38,13 +26,6 @@ except:
 
 # instance of do sentiment analysis
 analyzer = SentimentIntensityAnalyzer()
-
-
-# # time_label added
-# def time_label(tweet_time):
-#     time_parse = tweet_time.split(' ')[3]
-#     time_tag = time_parse[:2]
-#     return time_tag
 
 
 class MyStreamListener(tweepy.StreamListener):
