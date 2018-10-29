@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1549cb4b-07fa-42aa-ae38-6e409bf5eb85" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Server/flaskServer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/flaskServer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chrome_Extension/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/Chrome_Extension/popup.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,16 +22,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="search.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="search.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Harvester/search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="19" />
+            <state relative-caret-position="57">
+              <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="flaskServer.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="flaskServer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/flaskServer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
@@ -755,13 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Harvester/search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/flaskServer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -772,6 +765,13 @@
             <element signature="e#4731#5267#0" />
             <element signature="e#5760#6175#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Harvester/search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
         </state>
       </provider>
     </entry>
